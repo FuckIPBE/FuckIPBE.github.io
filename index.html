@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FuckIPBE</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://upload.wikimedia.org/wikipedia/zh/d/dc/Wikipedia_IP_logo.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* 背景暗化遮罩层 */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.4); /* 加深背景图 */
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: -1;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(76, 175, 80, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 12px 24px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .header h1, .header p {
+      margin: 0;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      gap: 20px;
+    }
+
+    .sidebar {
+      flex: 0 0 220px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      color: #fff;
+    }
+
+    .sidebar h2 {
+      font-size: 1.3em;
+      margin-top: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 12px;
+    }
+
+    .sidebar a {
+      color: #c8fcd4;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    .content {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+      padding: 30px;
+      color: #fff;
+      transition: transform 0.2s ease;
+    }
+
+    .content:hover {
+      transform: scale(1.005);
+    }
+
+    .content section {
+      display: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .content section.active {
+      display: block;
+    }
+
+    .content h2 {
+      cursor: pointer;
+      position: relative;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      padding-right: 25px;
+      transition: color 0.2s ease;
+    }
+
+    .content h2::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 1.2em;
+      color: #fff;
+    }
+
+    .content h2.active::after {
+      content: '-';
+    }
+
+    .content h2.active {
+      color: #90ffb0;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    .fade-in:nth-child(1) { animation-delay: 0.3s; }
+    .fade-in:nth-child(2) { animation-delay: 0.6s; }
+    .fade-in:nth-child(3) { animation-delay: 0.9s; }
+    .fade-in:nth-child(4) { animation-delay: 1.2s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    a {
+      color: #b6ffcc;
+    }
+    a:hover {
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>维基百科废除IP封禁协会</h1>
+    <p>FuckIPBE</p>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <h2>目录</h2>
+      <ul>
+        <li><a href="#section1">背景</a></li>
+        <li><a href="#section2">主张</a></li>
+        <li><a href="#section3">资源</a></li>
+        <li><a href="#section4">参见</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <section id="section1" class="fade-in">
+        <h2>背景</h2>
+        <ul>
+          <li>中国大陆用户因网络审查（如防火长城）必须使用代理服务器访问。</li>
+          <li>公共代理IP常被多人共用，导致连带封禁。</li>
+        </ul>
+      </section>
+      <section id="section2" class="fade-in">
+        <h2>主张</h2>
+        <p>取消IP封锁机制。</p>
+      </section>
+      <section id="section3" class="fade-in">
+        <h2>资源</h2>
+        <ul>
+          <li><a href="https://zh.wikipedia.org/wiki/Wikipedia:IP封禁豁免">Wikipedia:IP封禁豁免</a></li>
+          <li><a href="https://zh.wikipedia.org/wiki/Wikipedia:封禁">Wikipedia:封禁</a></li>
+        </ul>
+      </section>
+      <section id="section4" class="fade-in">
+        <h2>参见</h2>
+        <ul>
+          <li><a href="https://zh.wikipedia.org/wiki/Wikipedia:网络审查与维基百科">Wikipedia:网络审查与维基百科</a></li>
+          <li><a href="https://zh.wikipedia.org/wiki/Wikipedia:代理使用指南">Wikipedia:代理使用指南</a></li>
+          <li><a href="https://meta.wikimedia.org/wiki/Advocacy/Chinese">meta:Advocacy/Chinese</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const headers = document.querySelectorAll('.content h2');
+      headers.forEach(header => {
+        header.addEventListener('click', function () {
+          const section = this.parentElement;
+          section.classList.toggle('active');
+          this.classList.toggle('active');
+        });
+      });
+
+      const links = document.querySelectorAll('.sidebar a');
+      links.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetId);
+          headers.forEach(header => {
+            const section = header.parentElement;
+            if (section === targetSection) {
+              section.classList.add('active');
+              header.classList.add('active');
+            } else {
+              section.classList.remove('active');
+              header.classList.remove('active');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
