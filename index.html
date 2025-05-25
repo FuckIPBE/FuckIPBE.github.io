@@ -6,183 +6,194 @@
   <title>FuckIPBE</title>
   <style>
     body {
-      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/d/dc/Wikipedia_IP_logo.png') no-repeat center center fixed;
-      background-size: cover;
-      position: relative;
+        font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/d/dc/Wikipedia_IP_logo.png') no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
     }
 
-    /* 背景暗化遮罩层 */
     body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.4); /* 加深背景图 */
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      z-index: -1;
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: -1;
     }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(76, 175, 80, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 12px 24px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(76, 175, 80, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 12px 24px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
 
-.header h1,
-.header p {
-  margin: 0;
-  color: #fff;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-}
+    .header h1,
+    .header p {
+        margin: 0;
+        color: #fff;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    }
 
     .container {
-      display: flex;
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-      gap: 20px;
+        display: flex;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        gap: 20px;
     }
 
     .sidebar {
-      flex: 0 0 220px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      color: #fff;
+        flex: 0 0 220px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        color: #fff;
     }
 
     .sidebar h2 {
-      font-size: 1.3em;
-      margin-top: 0;
+        font-size: 1.3em;
+        margin-top: 0;
     }
 
     .sidebar ul {
-      list-style: none;
-      padding: 0;
+        list-style: none;
+        padding: 0;
     }
 
     .sidebar li {
-      margin-bottom: 12px;
+        margin-bottom: 12px;
     }
 
     .sidebar a {
-      color: #c8fcd4;
-      text-decoration: none;
-      font-weight: 500;
+        color: #c8fcd4;
+        text-decoration: none;
+        font-weight: 500;
     }
 
     .sidebar a:hover {
-      text-decoration: underline;
-      color: #fff;
+        text-decoration: underline;
+        color: #fff;
     }
 
     .content {
-      flex: 1;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
-      padding: 30px;
-      color: #fff;
-      transition: transform 0.2s ease;
+        flex: 1;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+        padding: 30px;
+        color: #fff;
+        transition: transform 0.2s ease;
     }
 
     .content:hover {
-      transform: scale(1.005);
+        transform: scale(1.005);
     }
 
     .content section {
-      display: none;
-      transition: all 0.3s ease-in-out;
+        display: none;
+        transition: all 0.3s ease-in-out;
     }
 
     .content section.active {
-      display: block;
+        display: block;
     }
 
     .content h2 {
-      cursor: pointer;
-      position: relative;
-      font-size: 1.5em;
-      margin-bottom: 10px;
-      padding-right: 25px;
-      transition: color 0.2s ease;
+        cursor: pointer;
+        position: relative;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        padding-right: 25px;
+        transition: color 0.2s ease;
     }
 
     .content h2::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-size: 1.2em;
-      color: #fff;
+        content: '+';
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 1.2em;
+        color: #fff;
     }
 
     .content h2.active::after {
-      content: '-';
+        content: '-';
     }
 
     .content h2.active {
-      color: #90ffb0;
+        color: #90ffb0;
     }
 
     .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s forwards;
-    }
-
-    .fade-in:nth-child(1) { animation-delay: 0.3s; }
-    .fade-in:nth-child(2) { animation-delay: 0.6s; }
-    .fade-in:nth-child(3) { animation-delay: 0.9s; }
-    .fade-in:nth-child(4) { animation-delay: 1.2s; }
-
-    @keyframes fadeInUp {
-      from {
         opacity: 0;
         transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+        animation: fadeInUp 0.8s forwards;
+    }
+
+    .fade-in:nth-child(1) {
+        animation-delay: 0.3s;
+    }
+
+    .fade-in:nth-child(2) {
+        animation-delay: 0.6s;
+    }
+
+    .fade-in:nth-child(3) {
+        animation-delay: 0.9s;
+    }
+
+    .fade-in:nth-child(4) {
+        animation-delay: 1.2s;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     a {
-      color: #b6ffcc;
+        color: #b6ffcc;
     }
+
     a:hover {
-      color: #ffffff;
+        color: #ffffff;
     }
 
     footer {
-      text-align: center;
-      padding: 20px;
-      color: #fff;
+        text-align: center;
+        padding: 20px;
+        color: #fff;
     }
 
     footer a {
-      color: #b6ffcc;
+        color: #b6ffcc;
     }
 
     footer a:hover {
-      color: #ffffff;
+        color: #ffffff;
     }
   </style>
 </head>
